@@ -7,7 +7,7 @@
 
 str_file_PATH = 'example20150914.txt'
 
-def str_seriation_check(str):
+def str_seriation_check(str_line):
 #       "-*-检测字符串顺序排列-*-"
 #       print str_seriation_check.__doc__
         str = str_line.strip('\n')
