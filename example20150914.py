@@ -10,7 +10,8 @@ str_file_PATH = 'example20150914.txt'
 def str_seriation_check(str):
 #       "-*-检测字符串顺序排列-*-"
 #       print str_seriation_check.__doc__
-        print "-*-检测字符串顺序排列-*-{0}".format(str).strip('\n')
+        str = str_line.strip('\n')
+        print "-*-检测字符串顺序排列-*-{0}".format(str)
         if len(str) < 2:
                 return "字符串太短"
         for i in xrange(len(str)):
