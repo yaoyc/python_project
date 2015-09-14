@@ -15,8 +15,8 @@ def str_seriation_check(str):
                         if str[i-1] <= str[i]:
                                 continue
                         else:
-                                return "Fail，字符串不是按顺序排列的"
-        return "OK，字符串是按顺序排列的"
+                                return "Fail,字符串不是按顺序排列的. 第 {} 位大于第 {} 位.".format(i, i+1)
+        return "OK,字符串是按顺序排列的."
 
 if __name__ == "__main__":
-        print str_seriation_check('abcde')
+        print str_seriation_check('abcdfe')
