@@ -25,6 +25,7 @@ def read_file(file_str):
         fr = open(file_str)
         for read_line in fr:
                 print str_seriation_check(read_line)
+        fr.close()
 
 if __name__ == "__main__":
         read_file(str_file_PATH)
