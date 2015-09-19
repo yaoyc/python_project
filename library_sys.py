@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding:utf-8
 ### 图书馆系统
-### 添加书籍、删除书籍、查询书库、查询用户借阅、借阅书籍(后续将完善书架)
+### 添加书籍、删除书籍、检索书库、检索用户借阅、借阅书籍(后续将完善书架)
 ### library_sys.py
 
 class library(object):
@@ -15,23 +15,23 @@ class library(object):
 	def del_book(self, old_sn):	#删除书籍
 		self.SN_dict.pop(old_sn)
 	
-	def find_book(self, index):	#查询书库，按索引条件
-		if isinstance(index, int) == True:	#按 SN编号 查找
+	def find_book(self, index):	#检索书库，按索引条件
+		if isinstance(index, int) == True:	#按 SN编号 检索
 			if index not in self.SN_dict.keys():
 				return "SN编号不存在"
 			result = self.SN_dict[index]
 			return "SN编号:{0} 对应的书籍为:《{1}》".format(index, result)
-		book_num = self.SN_dict.values().count(index)	#按 书名 查找
+		book_num = self.SN_dict.values().count(index)	#按 书名 检索
 		if book_num == 0:
 			return "没有《{0}》".format(index)
 		else:
 			tmp_sn = []
-			for key,value in self.SN_dict.iteritems():	#根据书名 搜索 SN编号
+			for key,value in self.SN_dict.iteritems():	#根据书名 检索 SN编号
 				if value == index:
 					tmp_sn.append(key)
 			return "《{0}》对应的所有SN编号列表为:{1}".format(index, tmp_sn)
 
-	def find_user(self, name):	#查询用户借阅书籍
+	def find_user(self, name):	#检索用户借阅
 		if (name in self.user_dict.keys()) == True:
 			tmp_sn_book = {}
 			tmp_sn = self.user_dict[name]
@@ -49,4 +49,4 @@ class library(object):
 print library().find_book("python")
 print library().find_user("zhangsan")
 library().add_book(1234,'shell')
-print library().find_book(123)
+print library().find_book(1234)
