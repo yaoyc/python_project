@@ -20,7 +20,7 @@ class library(object):
 			if index not in self.SN_dict.keys():
 				return "SN编号不存在"
 			result = self.SN_dict[index]
-			return "SN编号:{0} 对应的书籍为:《{1}》".format(index, result)
+			return "SN编号:{0} 的书籍:《{1}》".format(index, result)
 		book_num = self.SN_dict.values().count(index)	#按 书名 检索
 		if book_num == 0:
 			return "没有《{0}》".format(index)
@@ -29,7 +29,7 @@ class library(object):
 			for key,value in self.SN_dict.iteritems():	#根据书名 检索 SN编号
 				if value == index:
 					tmp_sn.append(key)
-			return "《{0}》对应的所有SN编号列表为:{1}".format(index, tmp_sn)
+			return "《{0}》的SN编号列表:{1}".format(index, tmp_sn)
 
 	def find_user(self, name):	#检索用户借阅
 		if (name in self.user_dict.keys()) == True:
@@ -46,7 +46,7 @@ class library(object):
 		tmp_sn_book[sn] = self.SN_dict[sn]
 		return "{0} 成功借阅《{1}》".format(name, tmp_sn_book)
 
-library_example = library()
+library_example = library()	#实例化对象
 print library_example.find_book("python")
 print library_example.find_user("zhangsan")
 library_example.add_book(1234,'shell')
