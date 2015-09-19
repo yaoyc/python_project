@@ -38,7 +38,7 @@ class library(object):
 			for sn in tmp_sn:
 				tmp_sn_book[sn] = self.SN_dict[sn]
 			return "{0} 已借阅 {1}".format(name, tmp_sn_book)
-		return "{0} 没有借书"
+		return "{0} 没有借书".format(name)
 	
 	def borrow_book(self, sn, name):	#借阅书籍
 		self.user_dict[name].append(sn)
