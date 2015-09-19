@@ -7,7 +7,7 @@
 class library(object):
 	def __init__(self):
 		self.SN_dict = {123:'python', 234:'python'}	#唯一性SN编号与书名
-		self.persion_dict = {'zhangsan':[123, 234]}	#借阅者与借阅列表
+		self.user_dict = {'zhangsan':[123, 234]}	#借阅者与借阅列表
 
 	def add_book(self, sn, new_book):	#添加书籍
 		self.SN_dict[sn] = new_book
@@ -32,16 +32,16 @@ class library(object):
 			return "《{0}》对应的所有SN编号列表为:{1}".format(index, tmp_sn)
 
 	def find_user(self, name):	#查询用户借阅书籍
-		if (name in self.persion_dict.keys()) == True:
+		if (name in self.user_dict.keys()) == True:
 			tmp_sn_book = {}
-			tmp_sn = self.persion_dict[name]
+			tmp_sn = self.user_dict[name]
 			for sn in tmp_sn:
 				tmp_sn_book[sn] = self.SN_dict[sn]
 			return "{0} 已借阅 {1}".format(name, tmp_sn_book)
 		return "{0} 没有借书"
 	
 	def borrow_book(self, sn, name):	#借阅书籍
-		self.persion_dict[name].append(sn)
+		self.user_dict[name].append(sn)
 		tmp_sn_book = {}
 		tmp_sn_book[sn] = self.SN_dict[sn]
 		return "{0} 成功借阅《{1}》".format(name, tmp_sn_book)
