@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding:utf-8
 ### 图书馆系统
-### 添加书籍、删除书籍、查询书库、查询用户借阅、借阅书籍(含书架)
+### 添加书籍、删除书籍、查询书库、查询用户借阅、借阅书籍(后续将完善书架)
 ### library_sys.py
 
 class library(object):
