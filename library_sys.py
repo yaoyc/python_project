@@ -46,7 +46,10 @@ class library(object):
 		tmp_sn_book[sn] = self.SN_dict[sn]
 		return "{0} 成功借阅《{1}》".format(name, tmp_sn_book)
 
-print library().find_book("python")
-print library().find_user("zhangsan")
-library().add_book(1234,'shell')
-print library().find_book(1234)
+library_example = library()
+print library_example.find_book("python")
+print library_example.find_user("zhangsan")
+library_example.add_book(1234,'shell')
+print library_example.find_book(1234)
+library_example.del_book(1234)
+print library_example.find_book(1234)
