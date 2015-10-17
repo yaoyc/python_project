@@ -16,7 +16,7 @@ def jhm(length):
     Licence_List = chr_list[:]  #初始化激活码列表
     tmp_list = []       #初始化临时容器
 
-    for i in xrange(length-1):      #控制密码位数
+    for i in xrange(length-1):      #控制序列号位数
         for values in chr_list:
             tmp_list += jhm_count(Licence_List, values)     #序列号复杂度要求
         Licence_List = tmp_list[:]
