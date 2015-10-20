@@ -61,7 +61,10 @@ def num_set(num):
 #-------向左走
         while direction == "W":
             set_list[init_X][init_Y] = value
-            if init_Y  < count - 1:
+            if init_X == 0 and init_Y == 0:
+                direction = "S"
+                continue
+            elif init_Y  < count - 1:
                 direction = "S"
                 continue
             else:
@@ -84,4 +87,4 @@ if __name__ == '__main__':
     for i in xrange(3,11,1):
         num_set(i)
         print
-#num_set(5)
+#num_set(3)
