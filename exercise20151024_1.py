@@ -22,7 +22,7 @@ def Weekend_deco(func):
 """商品定价"""
 def pricing(**kwargs):
     for keys,values in kwargs.items():
-        kwargs[keys] = price(values)
+        kwargs[keys] = "%.2f" % (price(values)) #保留2位小数
     return kwargs
 
 """计价策略"""
