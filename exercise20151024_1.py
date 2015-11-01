@@ -9,17 +9,16 @@
 def Everyday_deco(func):
     def wrapper(**kwargs):   #函数包装
         limit = 20      #减20  
-        return {n: kwargs[n] - limit for n in kwargs}
-        func(**kwargs)      #调用原始函数
+        return {n: kwargs[n] - limit for n in func(**kwargs)}
+        #func(**kwargs)      #调用原始函数
     return wrapper
-
 
 """8折"""
 def Weekend_deco(func):
     def wrapper(**kwargs):   #函数包装
         limit = 0.8     #8折
-        return {n: kwargs[n] * 0.8 for n in kwargs}
-        func(**kwargs)
+        return {n: kwargs[n] * limit for n in func(**kwargs)}
+        #func(**kwargs)
     return wrapper
 
 """商品定价"""
@@ -28,4 +27,4 @@ def Weekend_deco(func):
 def pricing(**kwargs):
     return kwargs
 
-#print pricing(HUAWEI=3000, Iphone=5288, Thinkpad=7000)
+print pricing(HUAWEI=3000, Iphone=5288, Thinkpad=7000)
