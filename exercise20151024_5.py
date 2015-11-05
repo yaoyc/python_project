@@ -5,9 +5,11 @@
 用requests 模块获取网站信息
 '''
 import requests
+URL = "http://tieba.baidu.com/p/2460150866"
 
-r = requests.get("http://www.baidu.com")
+r = requests.get(URL)
 r.headers
 r.status_code
 #r.test
+
 print r.content
