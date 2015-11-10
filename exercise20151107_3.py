@@ -10,7 +10,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 
-db = create_engine("mysql://python:123456@192.168.119.160") #初始化数据库连接
+db = create_engine("mysql://www:123456@localhost") #初始化数据库连接
 db.execute("use conference")    #使用conference库
 Base = declarative_base()   #声明映射，创建对象的基类
 
